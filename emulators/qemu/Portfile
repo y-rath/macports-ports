@@ -8,7 +8,7 @@ PortGroup legacysupport 1.0
 
 name                    qemu
 version                 4.2.0
-revision                1
+revision                2
 categories              emulators
 license                 GPL-2+
 platforms               darwin
@@ -29,7 +29,9 @@ checksums               rmd160  e9f1d6ee14de42d24b631a486f62a2ac7e2bf7c5 \
                         sha256  3cf4f3f73233a12211a045f07eef467fdc7bf3877568cd0c8a0cf36121da9fbd \
                         size    76041728 
 
-patchfiles              patch-configure.diff
+patchfiles              patch-configure.diff \
+                        patch-hvf.c.diff \
+                        patch-x86_cpuid.c.diff
 patch.pre_args          -p1
 
 depends_build           port:texinfo \
