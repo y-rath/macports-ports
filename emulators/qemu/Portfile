@@ -7,8 +7,8 @@ PortGroup compiler_blacklist_versions 1.0
 PortGroup legacysupport 1.0
 
 name                    qemu
-version                 5.0.0
-revision                1
+version                 5.1.0
+revision                0
 categories              emulators
 license                 GPL-2+
 platforms               darwin
@@ -25,11 +25,13 @@ homepage                https://www.qemu.org
 master_sites            https://download.qemu.org/
 use_xz                  yes
 
-checksums               rmd160  58a704960cd712cf6c218216e8426a05948f6526 \
-                        sha256  2f13a92a0fa5c8b69ff0796b59b86b080bbb92ebad5d301a7724dd06b5e78cb6 \
-                        size    62426192
+checksums               rmd160  f5e4a20c481d7e2bf822bf6bf41667b810c3cecd \
+                        sha256  c9174eb5933d9eb5e61f541cd6d1184cd3118dfe4c5c4955bc1bdc4d390fa4e5 \
+                        size    62911540
 
-patchfiles              patch-configure.diff
+patchfiles              patch-configure.diff \
+                        patch-hvf.c.diff \
+                        patch-x86_cpuid.c.diff
 patch.pre_args          -p1
 
 depends_build           port:texinfo \
