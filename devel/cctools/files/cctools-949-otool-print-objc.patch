@@ -1,0 +1,15 @@
+diff -ruN otool/print_objc.c otool-patched/print_objc.c
+--- otool/print_objc.c	2020-02-28 13:02:49.000000000 -0500
++++ otool-patched/print_objc.c	2021-11-19 14:51:29.000000000 -0500
+@@ -38,6 +38,11 @@
+ #include "dyld_bind_info.h"
+ #include "ofile_print.h"
+ 
++#define CLS_GETINFO(cls,infomask)	((cls)->info & (infomask))
++
++#define CLS_CLASS		0x1L
++#define CLS_META		0x2L
++
+ /*
+  * Here we need structures that have the same memory layout and size as the
+  * 32-bit Objective-C 1 meta data structures.
