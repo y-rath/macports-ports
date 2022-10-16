@@ -2,8 +2,9 @@
 
 PortSystem              1.0
 
-name                    verilator
-version                 4.202
+PortGroup               github 1.0
+github.setup            verilator verilator 4.228 v
+
 revision                0
 categories              science electronics
 license                 {LGPL-3 Artistic-2}
@@ -14,15 +15,13 @@ long_description        Verilator is a ${description}.
 
 homepage                https://www.veripool.org/wiki/verilator
 
-master_sites            https://www.veripool.org/ftp
-
-extract.suffix          .tgz
-
-checksums               rmd160  709fa1b70af80f23d6ada18098df8e7ab846d4ab \
-                        sha256  d8daff2461493439889f85e4a9ccb2d865e9c4ca1a06f611fe36d64bc020b679 \
-                        size    3149226
+checksums               rmd160  011dc82a4900aa338fdec81788f797904b4067d7 \
+                        sha256  dfdd20bbbd842f651c10b923f2abe7b49855245749ab0043e78e0faf9f8ee090 \
+                        size    2623915
 
 compiler.cxx_standard   2014
+
+use_autoconf            yes
 
 installs_libs           no
 
