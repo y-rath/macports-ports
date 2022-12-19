@@ -45,6 +45,9 @@ depends_lib             path:lib/pkgconfig/glib-2.0.pc:glib2 \
                         port:zlib \
                         path:lib/pkgconfig/pixman-1.pc:libpixman
 
+# This patch enables CPUID leaf 0x80000000 which tells you the highest extended leaf
+patchfiles-append       patch-x86_cpuid.c.diff
+
 # This patch sets the python interpreter from meson's shebang line
 patchfiles-append       patch-qemu-configure.diff
 
